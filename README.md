@@ -1,9 +1,13 @@
 # wifi-reconnect
 無線LAN接続している貧弱なUbuntuサーバー向けShellスクリプト
 
-# 無線LANが切断された場合に自動で再接続するスクリプト
+# なにこれ？
 
 このスクリプトは、無線LANが切断された場合に自動で再接続するスクリプトです。
+
+諸事情で無線LANしか使えないネット環境でUbuntuサーバー運用している人向け
+
+WiFi接続が解除されたり、回線が不安定な時にcronで定期実行することで安定性を保ちます。
 
 ## 使い方
 
@@ -14,22 +18,23 @@
 
 SSID、インターフェイス名、パスワードは、スクリプトの冒頭で定義します。
 
-コードは慎重に使用してください。詳細
 SSID="SSID"
+
 INTERFACE="wlan0"
+
 PASSWORD="password"
 
+インターフェイス名は ifconfig コマンドで確認できます。
 
 ## 実行
 
 スクリプトを実行するには、以下のコマンドを実行します。
 
-chmod +x wifi_autoconnect.sh
+chmod +x reconnect.sh
 
-./wifi_autoconnect.sh
+./reconnect.sh
 
-動作
-スクリプトは、以下の手順で動作します。
+
 
 大元のwifiの使用状況を調べます。
 接続が切断されているか確認します。
